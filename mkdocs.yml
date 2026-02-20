@@ -1,0 +1,150 @@
+site_name: Estruturas de Dados - Curso
+site_url: https://ricardotecpro.github.io/ads_mod_09_estruturas_de_dados
+repo_url: https://github.com/ricardotecpro/ads_mod_09_estruturas_de_dados
+repo_name: ricardotecpro/ads_mod_09_estruturas_de_dados
+
+theme:
+  name: material
+  language: pt-BR
+  favicon: assets/images/logic_logo.svg
+  logo: assets/images/logic_logo.svg
+  custom_dir: overrides
+  features:
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - toc.follow
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Mudar para modo escuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Mudar para modo claro
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - pymdownx.critic
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.details
+  - pymdownx.keys
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - footnotes
+  - admonition
+  - attr_list
+  - tables
+  - pymdownx.snippets:
+      base_path: docs
+  - pymdownx.arithmatex:
+      generic: true
+
+plugins:
+  - search:
+      lang: pt
+  - mkdocs-jupyter
+  - glightbox
+  - mkdocs_quiz
+  - git-authors:
+      show_contribution: true
+      exclude:
+        - index.md
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: datetime
+  - macros
+  - mkdocs-video
+  - termynal:
+      title: shell
+      buttons: macos
+      prompt_literal_start:
+        - "$"
+  - rss:
+      match_path: .*
+      date_from_meta:
+        datetime_format: '%Y-%m-%d %H:%M:%S'
+
+hooks:
+  - hooks/copy_slides.py
+
+extra_css:
+  - assets/css/quiz.css
+  - assets/css/home.css
+  - assets/css/extra.css
+  - https://cdn.jsdelivr.net/npm/termynal/termynal.css
+
+extra_javascript:
+  - assets/js/quiz.js
+  - https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js
+  - assets/js/mermaid-init.js
+  - assets/js/custom_termynal.js
+  - assets/js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/termynal/termynal.min.js
+
+nav:
+  - Início: index.md
+  - Plano de Ensino: plano-ensino.md
+  - Aulas:
+      - aulas/index.md
+      - 'Módulo 1 – Fundamentos':
+        - 'Aula 01 - Introdução às Estruturas de Dados': aulas/aula-01.md
+        - 'Aula 02 - Revisão de Lógica e Funções': aulas/aula-02.md
+      - 'Módulo 2 – Estruturas Básicas':
+        - 'Aula 03 - Arrays (Vetores)': aulas/aula-03.md
+        - 'Aula 04 - Matrizes': aulas/aula-04.md
+        - 'Aula 05 - Análise de Complexidade (Big-O)': aulas/aula-05.md
+      - 'Módulo 3 – Listas':
+        - 'Aula 06 - Listas Encadeadas': aulas/aula-06.md
+        - 'Aula 07 - Listas Duplamente Encadeadas': aulas/aula-07.md
+      - 'Módulo 4 – Sequenciais':
+        - 'Aula 08 - Pilhas (Stacks)': aulas/aula-08.md
+        - 'Aula 09 - Filas (Queues)': aulas/aula-09.md
+      - 'Módulo 5 – Avançado':
+        - 'Aula 10 - Recursão Aplicada': aulas/aula-10.md
+        - 'Aula 11 - Árvores – Conceitos Básicos': aulas/aula-11.md
+        - 'Aula 12 - Árvores Binárias': aulas/aula-12.md
+        - 'Aula 13 - Árvores de Busca Binária (BST)': aulas/aula-13.md
+      - 'Módulo 6 – Avançado II':
+        - 'Aula 14 - Tabelas Hash': aulas/aula-14.md
+        - 'Aula 15 - Introdução a Grafos': aulas/aula-15.md
+        - 'Aula 16 - Projeto Final': aulas/aula-16.md
+  - Materiais:
+      - materiais.md
+      - Slides: slides/index.md
+      - Exercícios: exercicios/index.md
+      - Quizzes: quizzes/index.md
+      - Projetos: projetos/index.md
+      - Setups: setups/index.md
+  - Sobre: sobre.md
+  - Impressão: print_page.md
